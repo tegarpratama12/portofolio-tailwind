@@ -10,7 +10,7 @@
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                        <x-navlink href="{{ route('home') }}" :active="Request()->is('/')" >Home Page</x-navlink>
+                        <x-navlink href="{{ route('home') }}" :active="Request()->is('/')" >Beranda</x-navlink>
                         <x-navlink href="{{ route('about') }}" :active="Request()->is('about')" >About Me</x-navlink>
                         <x-navlink href="{{ route('project') }}" :active="Request()->is('project')" >My Projects</x-navlink>
                     </div>
