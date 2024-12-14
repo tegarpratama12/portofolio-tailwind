@@ -10,8 +10,8 @@
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-4">
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                        <x-navlink href="{{ route('home') }}" :active="Request()->is('/')" >Beranda</x-navlink>
-                        <x-navlink href="{{ route('about') }}" :active="Request()->is('about')" >About Me</x-navlink>
+                        {{-- <x-navlink href="{{ route('home') }}" :active="Request()->is('/')" >Beranda</x-navlink> --}}
+                        <x-navlink href="{{ route('about') }}" :active="Request()->is('/')" >About Me</x-navlink>
                         <x-navlink href="{{ route('project') }}" :active="Request()->is('project')" >My Projects</x-navlink>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
                                 id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                                 <span class="absolute -inset-1.5"></span>
                                 <span class="sr-only">Open user menu</span>
-                                <img class="size-8 rounded-full" src="/images/index.jpg" alt="tegarpratama">
+                                {{-- <img class="size-8 rounded-full" src="/images/index.jpg" alt="tegarpratama"> --}}
                             </button>
                         </div>
 
@@ -89,13 +89,14 @@
     <div x-show="isOpen" class="md:hidden" id="mobile-menu">
         <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="{{ route('home') }}" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white"
-                aria-current="page">Home Page</a>
+            {{-- <a href="{{ route('home') }}"
+                class="block rounded-md {{ request()->is('/') ? 'bg-gray-900' : 'bg-gray-800' }} px-3 py-2 text-base font-medium text-white"
+                aria-current="page">Home Page</a> --}}
             <a href="{{ route('about') }}"
-                class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About
+                class="block rounded-md {{ request()->is('/') ? 'bg-gray-900' : 'bg-gray-800' }} px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About
                 Me</a>
             <a href="{{ route('project') }}"
-                class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">My
+                class="block rounded-md {{ request()->is('project') ? 'bg-gray-900' : 'bg-gray-800' }} px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">My
                 Project</a>
         </div>
         <div class="border-t border-gray-700 pb-3 pt-4">

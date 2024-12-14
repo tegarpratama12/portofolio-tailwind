@@ -22,6 +22,10 @@
             @foreach ($projects as $prj)
                 <article
                     class="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+                    <div class="w-full h-56 md:h-72 mb-4 overflow-hidden rounded-lg">
+                        <img src="https://picsum.photos/800/400" alt="{{ $prj->category->name }}"
+                            class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-300">
+                    </div>
                     <div class="p-6">
                         <!-- Title dan Timestamp tetap di atas -->
                         <div class="flex items-center justify-between mb-4">
@@ -33,13 +37,6 @@
                             </a>
                             <span class="text-sm text-gray-500">{{ $prj->created_at->diffForHumans() }}</span>
                         </div>
-
-                        <!-- Tambahan bagian gambar di bawah title -->
-                        <div class="w-full h-56 md:h-72 mb-4 overflow-hidden rounded-lg">
-                            <img src="https://picsum.photos/800/400" alt="{{ $prj->category->name }}"
-                                class="w-full h-full object-cover object-center hover:scale-105 transition-transform duration-300">
-                        </div>
-
                         <!-- Author info -->
                         <div class="flex items-center mb-4">
                             <img src="https://ui-avatars.com/api/?name={{ urlencode($prj->author->name) }}"
